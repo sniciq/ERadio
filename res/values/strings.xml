@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ERadio</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">ER录音</string>
+    <string name="start">开始录音</string>
+    <string name="stop">停止</string>
     <string name="menu_settings">Settings</string>
 
 </resources>
