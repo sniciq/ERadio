@@ -5,18 +5,22 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
-    <Button android:id="@+id/start"
+    <ImageButton android:id="@+id/start"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/start"
+        android:contentDescription="@string/start"
+        android:src="@drawable/start"
         android:onClick="start"
+        android:visibility="visible"
         />
     
-    <Button android:id="@+id/stop"
+    <ImageButton android:id="@+id/stop"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/stop"
+        android:contentDescription="@string/stop"
+        android:src="@drawable/stop"
         android:onClick="stop"
+        android:visibility="invisible"
         />
 
 </LinearLayout>

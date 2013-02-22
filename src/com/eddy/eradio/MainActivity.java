@@ -15,22 +15,22 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends Activity {
 	
 	private MediaRecorder mediaRecorder;
 	private String mCurrentAudioPath;
-	private Button startBtn;
-	private Button stopBtn;
+	private ImageButton startBtn;
+	private ImageButton stopBtn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		startBtn = (Button) findViewById(R.id.start);
-		stopBtn = (Button) findViewById(R.id.stop);
+		startBtn = (ImageButton) findViewById(R.id.start);
+		stopBtn = (ImageButton) findViewById(R.id.stop);
 		stopBtn.setEnabled(false);
 	}
 
@@ -43,7 +43,11 @@ public class MainActivity extends Activity {
 	
 	public void start(View v) {
 		startBtn.setEnabled(false);
+		startBtn.setVisibility(View.INVISIBLE);
 		stopBtn.setEnabled(true);
+		stopBtn.setVisibility(View.VISIBLE);
+		
+		
 		try {
 			mediaRecorder = new MediaRecorder();
 			mediaRecorder.setAudioSource(AudioSource.MIC);
@@ -79,7 +83,9 @@ public class MainActivity extends Activity {
 	
 	public void stop(View v) {
 		startBtn.setEnabled(true);
+		startBtn.setVisibility(View.VISIBLE);
 		stopBtn.setEnabled(false);
+		stopBtn.setVisibility(View.INVISIBLE);
 		if(mediaRecorder != null) {
 			mediaRecorder.stop();
 			mediaRecorder.release();
